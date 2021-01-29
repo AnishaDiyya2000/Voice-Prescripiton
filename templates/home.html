@@ -1,0 +1,24 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HOME PAGE</title>
+    {% load static  %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+  </head>
+    <body>
+        <center><h1 style="color: white;">Prescription</h1></center>
+        <div class="parent-div">
+          <a href="{% url 'admin_login'%}">
+          <img   src="{% static 'images/adminicon.png'%}"height="200"
+          width="250"/></a>
+          <a href="{% url 'doc_login'%}">
+          <img src="{% static 'images/doc.jpg'%}"height="200"
+            width="250"/></a> 
+        </div>
+         
+      </div>
+    </body>
+  
+</html>

@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>ADMIN LOGIN</title>
+    {% load static  %}
+    <link rel="stylesheet" href="{% static 'css/admin_login.css' %}">
+  </head>
+  <body>
+    <div class="login-page">
+        <div class="form">
+        <form class="login-form">
+          <input type="text" placeholder="Admin id" />
+          <input type="password" placeholder="password" />
+          <button><a href="{% url 'addAndShow'%}">login</a></button>
+        </form>
+    </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+      $(".message a").click(function () {
+        $("form").animate({ height: "toggle", opacity: "toggle" }, "slow");
+      });
+    </script>
+  </body>
+</html>

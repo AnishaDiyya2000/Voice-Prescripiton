@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Doctor Page</title>
+        {% load static  %}
+    <link rel="stylesheet" href="{% static 'css/doc_navbar.css' %}">
+    </head>
+    <body>
+    <div class="wrap">
+        <nav>
+          
+            <ul>
+                 <li><a href="{%url 'doc_navbar'%}"> HOME</a></li>
+                 <li><a href="{%url 'voice_p'%}"> PRESCRIPTION</a></li>
+                 <li><a href="{%url 'doc_logout'%}"> LOGOUT</a></li>
+            </ul>
+        
+        </nav>
+        <section></section>
+        </div>
+     </body>
+   
+    
+</html>

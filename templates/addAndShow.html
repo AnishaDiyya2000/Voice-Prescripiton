@@ -1,0 +1,57 @@
+{% extends 'admin_base.html'%}
+{% block content %}
+<div class='row'>
+    <div class="col-sm-4 ">
+<h4 class="text-center alert alert-info">Add doc</h4>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" class="btn btn-success" value="Add">
+</form>
+</div>
+<div class="col sem-8 ">
+    <h4 class="text-center alert alert-info">Show Doctor Details</h4>
+    {% if stu %}
+    <table class="table table-hover">
+        <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">mobile</th>
+              <th scope="col">department</th>
+              <th scope="col">age</th>
+              <th scope="col">gender</th>
+              <th scope="col">email</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+              {% for st in stu %}
+            <tr>
+              <th scope="row">{{st.id}}</th>
+              <td>{{st.name1}}</td>
+              <td>{{st.mobile}}</td>
+              <td>{{st.department_doc}}</td>
+              <td>{{st.age}}</td>
+              <td>{{st.gender}}</td>
+              <td>{{st.email}}</td>
+              <td>
+                  <a href="{% url 'updateDoc' st.id%}" class="btn btn-warning btn-sm">E</a>
+                  <form action="{% url 'deleteData' st.id %}" method="post" class="d-inline">
+                    {% csrf_token %}
+                      <input type="submit" class="btn btn-danger" value="D">
+                  </form>
+                  
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+      </table>
+        {% else %}
+        <h4>no records</h4>
+        {% endif %}
+
+</div>
+</div>
+{% endblock content%}
